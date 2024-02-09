@@ -14,14 +14,18 @@
 export const cx = (...classes: (string | { [key: string]: boolean })[]) => {
   return classes
     .flatMap((c) => {
-      if (typeof c === "string") {
+      if (typeof c === 'string') {
         return c;
       } else {
-        return Object.entries(c)
-          .filter(([_, condition]) => condition)
-          .map(([className, _]) => className);
+        return (
+          Object.entries(c)
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .filter(([_, condition]) => condition)
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .map(([className, _]) => className)
+        );
       }
     })
     .filter(Boolean)
-    .join(" ");
+    .join(' ');
 };

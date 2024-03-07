@@ -14,7 +14,7 @@
     "type-check": "tsc --pretty --noEmit",
     "lint-and-check": "npm run lint && npm run type-check",
     "prepare": "husky install",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./.next",
     "validate": "npm run type-check && npm run lint-check && npm run format-check && npm run build"
   },
   "lint-staged": {
